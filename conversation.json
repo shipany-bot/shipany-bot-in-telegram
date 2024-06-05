@@ -1,0 +1,50 @@
+{
+  "$schema": "https://shipany.bot/schemata/0.4.0/schema.json",
+  "name": "shipany-bot",
+  "description": "A bot about which you can learn more at https://shipany.bot",
+  "version": "1.0.0",
+  "conversations": [
+    {
+      "$id": "greeting",
+      "activations": [
+        {
+          "command": "/start",
+          "next-step": "reply-in-return"
+        }
+      ],
+      "steps": [
+        {
+          "$id": "reply-in-return",
+          "actions": [
+            {
+              "name": "MessageAction@1",
+              "type": "reply",
+              "content": "Hello! I'm a bot that showcases the capabilities of Shipany's bot platform. You can learn more about it at https://shipany.bot. "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$id": "about",
+      "activations": [
+        {
+          "command": "/about",
+          "next-step": "reply-in-return"
+        }
+      ],
+      "steps": [
+        {
+          "$id": "reply-in-return",
+          "actions": [
+            {
+              "name": "MessageAction@1",
+              "type": "reply",
+              "content": "This bot showcases the capabilities of Shipany's bot platform. You can learn more about it at https://shipany.bot."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

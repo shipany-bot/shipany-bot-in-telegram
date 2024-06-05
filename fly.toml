@@ -1,0 +1,17 @@
+# fly.toml app configuration file generated for shipany-bot-in-telegram on 2024-06-04T21:56:00+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'shipany-bot-in-telegram'
+primary_region = 'cdg'
+
+[build]
+
+[processes]
+worker = "-m shipany.bot.cli.main run conversation.json"
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
